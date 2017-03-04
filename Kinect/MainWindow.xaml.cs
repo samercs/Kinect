@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kinect.DB;
 
 namespace Kinect
 {
@@ -23,6 +24,26 @@ namespace Kinect
         public MainWindow()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            var data = Enum.GetValues(typeof(MovieType)).Cast<MovieType>().Select(i => new
+            {
+                Name = i.ToString(),
+                Value = (int)i
+            }).ToList();
+
+            ItemsControl.ItemsSource = data;
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.Source as Button;
+            MovieList form = new MovieList((int)btn.CommandParameter);
+            form.Show();
+            this.Close();
         }
     }
 }
