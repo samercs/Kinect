@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinect"
         mc:Ignorable="d"
-        Title="Movie Detail" Height="503.873" Width="807.412" WindowStartupLocation="CenterScreen">
+        Title="Movie Detail" Loaded="MovieDetail_OnLoaded" Height="503.873" Width="807.412" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="name" Content="xxx" HorizontalContentAlignment="Center" FontSize="20" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.185,0.151" Width="608"/>
         <Image MouseDown="BackImage_OnMouseDown" x:Name="backImage" HorizontalAlignment="Left" Height="37" Margin="10,10,0,0" VerticalAlignment="Top" Width="49" Source="Images/back.png"/>

@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinect"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen">
+        Title="Main Window" Height="503.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Loaded="MainWindow_OnLoaded">
 
 
 
     <Grid>
-        <ItemsControl Name="ItemsControl" Margin="0,73,0,0">
+        <ItemsControl Name="ItemsControl" Margin="0,128,0,0">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Click="ButtonBase_OnClick" CommandParameter="{Binding Value}" FontSize="22" Margin="20,0,20,20" Content="{Binding Name}" Width="200" Height="100" />
+                    <Button Click="ButtonBase_OnClick" CommandParameter="{Binding Value}" FontSize="22" Margin="50,0,50,50" Content="{Binding Name}" Width="250" Height="100" />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>
@@ -22,6 +22,7 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
-        <Label FontSize="40" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="497"/>
+        <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="219,10,0,0" VerticalAlignment="Top" Width="366"/>
+        <Image x:Name="imgBack" MouseDown="ImgBack_OnMouseDown" HorizontalAlignment="Left" Height="42" Margin="736,10,0,0" VerticalAlignment="Top" Width="42" Source="Images/close.png"/>
     </Grid>
 </Window>

@@ -136,6 +136,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MoviesDb.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\2.jpg" />
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\4.jpg" />
+    <Resource Include="Images\5.jpg" />
+    <Resource Include="Images\6.jpg" />
+    <Resource Include="Images\7.jpg" />
     <Resource Include="Images\start_empty.png" />
     <Resource Include="Images\star.png" />
     <Resource Include="Images\back.png" />

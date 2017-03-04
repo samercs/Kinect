@@ -5,29 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinect"
         mc:Ignorable="d"
-        Title="MovieList" Height="547" Width="612" WindowStartupLocation="CenterScreen">
+        Title="Movie List" Loaded="MovieList_OnLoaded" Height="503.873" Width="807.412" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ItemsControl Name="ItemsControl" Margin="10,73,10,10">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Image ToolTip="{Binding Id}" MouseDown="UIElement_OnMouseDown" Margin="0,0,0,20" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Source="{Binding Img}"></Image>
-                        <TextBlock FontSize="20" Margin="30,20,0,0" Grid.Column="1" Text="{Binding Name}"></TextBlock>
+        <ScrollViewer Margin="0,112,0,61" Height="300">
+            <ItemsControl Name="ItemsControl" Width="742">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image ToolTip="{Binding Id}" MouseDown="UIElement_OnMouseDown" Margin="0,0,0,20" Height="100" Width="100" Stretch="Fill" Grid.Column="0" Source="{Binding Img}"></Image>
+                            <TextBlock FontSize="20" Margin="30,20,0,0" Grid.Column="1" Text="{Binding Name}"></TextBlock>
 
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel></StackPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-        <Label Name="Label1" HorizontalContentAlignment="Center" Content="List Of {0} Movies" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="584" Height="56" FontSize="24"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+        <Label Name="Label1" HorizontalContentAlignment="Center" Content="List Of {0} Movies" HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top" Width="407" Height="56" FontSize="24"/>
+        <Image x:Name="imgBack" MouseDown="ImgBack_OnMouseDown" HorizontalAlignment="Left" Height="49" Margin="10,17,0,0" VerticalAlignment="Top" Width="55" Source="Images/back.png"/>
+        <Image x:Name="imgClose" MouseDown="ImgClose_OnMouseDown" HorizontalAlignment="Left" Height="41" Margin="745,17,0,0" VerticalAlignment="Top" Width="44" Source="Images/close.png" RenderTransformOrigin="1.205,0.488"/>
 
     </Grid>
 </Window>

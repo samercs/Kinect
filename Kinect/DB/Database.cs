@@ -6,6 +6,8 @@ using System.Data.Odbc;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.IO;
+using System.Net.Mime;
+using System.Windows;
 using System.Windows.Documents;
 
 namespace Kinect.DB
@@ -71,7 +73,7 @@ namespace Kinect.DB
         }
 
         public Database()
-            : this(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString, Providers.SqlServer)
+            : this(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString.Replace("{0}", System.AppDomain.CurrentDomain.BaseDirectory.Replace(@"bin\Debug", "Data")), Providers.SqlServer)
         {
         }
 
