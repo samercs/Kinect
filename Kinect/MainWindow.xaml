@@ -4,25 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinect"
+        xmlns:controls="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
-        Title="Main Window" Height="503.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Loaded="MainWindow_OnLoaded">
+        Title="Main Window" Height="503.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" 
+        Loaded="MainWindow_OnLoaded" >
+
+    <controls:KinectRegion x:Name="kinectRegion">
+        <Grid Grid.Row="0" Margin="10 0 10 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images\Logo.png" Stretch="None" Margin="10,-14,0,405" RenderTransformOrigin="-5.675,2.043" Height="62" Width="111"/>
+            <controls:KinectUserViewer Grid.Column="0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" ></controls:KinectUserViewer>
+            
+
+            <Grid Grid.Column="0">
+                <ItemsControl Name="ItemsControl" Margin="0,128,0,0">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Click="ButtonBase_OnClick" CommandParameter="{Binding Value}" FontSize="22" Margin="50,0,50,50" Content="{Binding Name}" Width="250" Height="100" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="224,40,0,0" VerticalAlignment="Top" Width="366"/>
+                <Image x:Name="imgBack" MouseDown="ImgBack_OnMouseDown" HorizontalAlignment="Left" Height="42" Margin="727,10,0,0" VerticalAlignment="Top" Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+            </Grid>
+        </Grid>
 
 
 
-    <Grid>
-        <ItemsControl Name="ItemsControl" Margin="0,128,0,0">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Click="ButtonBase_OnClick" CommandParameter="{Binding Value}" FontSize="22" Margin="50,0,50,50" Content="{Binding Name}" Width="250" Height="100" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel></WrapPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-        <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="219,10,0,0" VerticalAlignment="Top" Width="366"/>
-        <Image x:Name="imgBack" MouseDown="ImgBack_OnMouseDown" HorizontalAlignment="Left" Height="42" Margin="736,10,0,0" VerticalAlignment="Top" Width="42" Source="Images/close.png"/>
-    </Grid>
+    </controls:KinectRegion>
 </Window>

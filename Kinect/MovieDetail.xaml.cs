@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Kinect.DB;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace Kinect
 {
@@ -36,6 +38,7 @@ namespace Kinect
         {
             this.MovieId = movieId;
             InitializeComponent();
+            
             LoadData();
         }
 

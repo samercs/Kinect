@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Kinect.DB;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace Kinect
 {
@@ -32,8 +34,11 @@ namespace Kinect
         public MainWindow()
         {
             InitializeComponent();
+            KinectRegion.SetKinectRegion(this, kinectRegion);
+            App app = ((App)Application.Current);
+            app.KinectRegion = kinectRegion;
+            this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
             LoadData();
-            
         }
 
         private void LoadData()

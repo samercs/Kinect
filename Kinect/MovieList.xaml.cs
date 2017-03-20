@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Kinect.DB;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace Kinect
 {
@@ -34,6 +36,10 @@ namespace Kinect
         {
             MovieType = movieType;
             InitializeComponent();
+            KinectRegion.SetKinectRegion(this, kinectRegion);
+            App app = ((App)Application.Current);
+            app.KinectRegion = kinectRegion;
+            this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
             LoadData();
         }
 
@@ -56,15 +62,6 @@ namespace Kinect
             ItemsControl.ItemsSource = items;
         }
 
-        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Image image = e.Source as Image;
-            var movieId = int.Parse(image.ToolTip.ToString());
-            var form = new MovieDetail(movieId);
-            form.Show();
-            this.Hide();
-        }
-
         private void ImgBack_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -81,6 +78,15 @@ namespace Kinect
         {
             var hwnd = new WindowInteropHelper(this).Handle;
             SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SYSMENU);
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var btn = e.Source as Button;
+            var movieId = int.Parse(btn.CommandParameter.ToString());
+            var form = new MovieDetail(movieId);
+            form.Show();
+            this.Hide();
         }
     }
 }
