@@ -10,9 +10,9 @@
     <controls:KinectRegion x:Name="kinectRegion">
 
         <Grid>
-            <Image Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images\Logo.png" Stretch="None" Margin="86,-14,0,425" RenderTransformOrigin="-5.675,2.043" Height="62" Width="111"/>
-            <controls:KinectUserViewer Grid.Column="0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" ></controls:KinectUserViewer>
-            <ScrollViewer Margin="0,112,0,61" Height="300">
+            
+            <controls:KinectUserViewer Grid.Column="0" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0,50,0,0"></controls:KinectUserViewer>
+            <ScrollViewer Margin="0,138,0,61">
                 <ItemsControl Name="ItemsControl" Width="742">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -40,8 +40,16 @@
                 </ItemsControl>
             </ScrollViewer>
             <Label Name="Label1" HorizontalContentAlignment="Center" Content="List Of {0} Movies" HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top" Width="407" Height="56" FontSize="24"/>
-            <Image x:Name="imgBack" MouseDown="ImgBack_OnMouseDown" HorizontalAlignment="Left" Height="49" Margin="10,9,0,0" VerticalAlignment="Top" Width="55" Source="Images/back.png"/>
-            <Image x:Name="imgClose" MouseDown="ImgClose_OnMouseDown" HorizontalAlignment="Left" Height="41" Margin="745,17,0,0" VerticalAlignment="Top" Width="44" Source="Images/close.png" RenderTransformOrigin="1.205,0.488"/>
+            <Button BorderThickness="0" Background="White" Click="ButtonClose_OnClick" Margin="732,10,10,407" Height="Auto" Width="Auto" Grid.Column="0">
+                <StackPanel>
+                    <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+                </StackPanel>
+            </Button>
+            <Button HorizontalContentAlignment="Left" BorderThickness="0" Background="White" Click="ButtonBack_OnClick" Margin="24,10,718,407" Height="Auto" Width="Auto" Grid.Column="0">
+                <StackPanel>
+                    <Image x:Name="imgBack" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
+                </StackPanel>
+            </Button>
 
         </Grid>
     </controls:KinectRegion>

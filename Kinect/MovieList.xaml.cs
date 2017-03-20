@@ -61,19 +61,7 @@ namespace Kinect
             }
             ItemsControl.ItemsSource = items;
         }
-
-        private void ImgBack_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void ImgClose_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
+        
         private void MovieList_OnLoaded(object sender, RoutedEventArgs e)
         {
             var hwnd = new WindowInteropHelper(this).Handle;
@@ -87,6 +75,17 @@ namespace Kinect
             var form = new MovieDetail(movieId);
             form.Show();
             this.Hide();
+        }
+        private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void ButtonBack_OnClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

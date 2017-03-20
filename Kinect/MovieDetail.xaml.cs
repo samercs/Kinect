@@ -23,7 +23,7 @@ namespace Kinect
     /// <summary>
     /// Interaction logic for MovieDetail.xaml
     /// </summary>
-    
+
     public partial class MovieDetail : Window
     {
         public int MovieId { get; set; }
@@ -38,7 +38,10 @@ namespace Kinect
         {
             this.MovieId = movieId;
             InitializeComponent();
-            
+            KinectRegion.SetKinectRegion(this, kinectRegion);
+            App app = ((App)Application.Current);
+            app.KinectRegion = kinectRegion;
+            this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
             LoadData();
         }
 
@@ -92,26 +95,23 @@ namespace Kinect
             {
                 rateImg5.Source = new BitmapImage(new Uri(@"pack://application:,,,/Kinect;component/Images/star.png"));
             }
-
-
         }
-
-        private void BackImage_OnMouseDown(object sender, MouseButtonEventArgs e)
+        private void MovieDetail_OnLoaded(object sender, RoutedEventArgs e)
         {
-            var form = new MovieList(Movie.Type);
-            form.Show();
-            this.Hide();
+            var hwnd = new WindowInteropHelper(this).Handle;
+            SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SYSMENU);
         }
 
-        private void CloseBtn_OnMouseDown(object sender, MouseButtonEventArgs e)
+        private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void MovieDetail_OnLoaded(object sender, RoutedEventArgs e)
+        private void ButtonBack_OnClick(object sender, RoutedEventArgs e)
         {
-            var hwnd = new WindowInteropHelper(this).Handle;
-            SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SYSMENU); 
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

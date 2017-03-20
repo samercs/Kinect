@@ -14,12 +14,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images\Logo.png" Stretch="None" Margin="10,-14,0,405" RenderTransformOrigin="-5.675,2.043" Height="62" Width="111"/>
-            <controls:KinectUserViewer Grid.Column="0" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" ></controls:KinectUserViewer>
-            
-
+            <controls:KinectUserViewer Grid.Column="0" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="358,50,329,0" Width="92" ></controls:KinectUserViewer>
             <Grid Grid.Column="0">
-                <ItemsControl Name="ItemsControl" Margin="0,128,0,0">
+                <ItemsControl Name="ItemsControl" Margin="0,164,0,0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Button Click="ButtonBase_OnClick" CommandParameter="{Binding Value}" FontSize="22" Margin="50,0,50,50" Content="{Binding Name}" Width="250" Height="100" />
@@ -31,8 +28,12 @@
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
-                <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="224,40,0,0" VerticalAlignment="Top" Width="366"/>
-                <Image x:Name="imgBack" MouseDown="ImgBack_OnMouseDown" HorizontalAlignment="Left" Height="42" Margin="727,10,0,0" VerticalAlignment="Top" Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+                <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="221,0,0,0" VerticalAlignment="Top" Width="366"/>
+                <Button BorderThickness="0" Background="White" Click="ButtonBack_OnClick" Margin="698,10,10,383" Height="Auto" Width="Auto" CommandParameter="{Binding Id}" Grid.Column="0">
+                    <StackPanel>
+                        <Image x:Name="imgBack" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+                    </StackPanel>
+                </Button>
             </Grid>
         </Grid>
 
