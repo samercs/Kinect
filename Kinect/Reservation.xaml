@@ -1,0 +1,22 @@
+﻿<Window x:Class="Kinect.Reservation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect"
+        mc:Ignorable="d"
+        Title="Reservation"  Height="503.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Loaded="MovieList_OnLoaded">
+    <Grid>
+        <Label Name="Label1" HorizontalContentAlignment="Center" Content="Reservation" HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top" Width="407" Height="56" FontSize="24"/>
+        <Button Click="ButtonClose_OnClick" BorderThickness="0" Background="White"  Margin="732,10,10,407" Height="Auto" Width="Auto" Grid.Column="0">
+            <StackPanel>
+                <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+            </StackPanel>
+        </Button>
+        <Button Click="ButtonBack_OnClick" HorizontalContentAlignment="Left" BorderThickness="0" Background="White"  Margin="24,10,718,407" Height="Auto" Width="Auto" Grid.Column="0">
+            <StackPanel>
+                <Image x:Name="imgBack"  HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
