@@ -6,44 +6,44 @@
         xmlns:local="clr-namespace:Kinect"
         xmlns:controls="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
-        Title="Movie Detail" Loaded="MovieDetail_OnLoaded" Height="578.873" Width="807.412" WindowStartupLocation="CenterScreen">
+        Title="Movie Detail" Loaded="MovieDetail_OnLoaded" Height="700" Width="1226.862" WindowStartupLocation="CenterScreen">
     <controls:KinectRegion x:Name="kinectRegion">
         <Grid Margin="0,0,0,-30">
 
             <controls:KinectUserViewer Grid.Column="0" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="369,50,339,0" Width="91"></controls:KinectUserViewer>
 
             <Label x:Name="name" Content="xxx" HorizontalContentAlignment="Center" FontSize="20" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.185,0.151" Width="414"/>
-            <Button BorderThickness="0" Background="White" Click="ButtonClose_OnClick" Margin="732,10,10,407" Height="Auto" Width="Auto" Grid.Column="0">
+            <Button HorizontalAlignment="Right" VerticalContentAlignment="Top" BorderThickness="0" Background="White" Click="ButtonClose_OnClick"  Height="Auto" Width="Auto" Grid.Column="0">
                 <StackPanel>
-                    <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+                    <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" />
                 </StackPanel>
             </Button>
-            <Button HorizontalContentAlignment="Left" BorderThickness="0" Background="White" Click="ButtonBack_OnClick" Margin="24,10,718,407" Height="Auto" Width="Auto" Grid.Column="0">
+            <Button VerticalContentAlignment="Top" HorizontalContentAlignment="Left" BorderThickness="0" Background="White" Click="ButtonBack_OnClick"  Height="42" Width="42" Grid.Column="0" Margin="10,8,1167,649" >
                 <StackPanel>
                     <Image x:Name="imgBack" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
                 </StackPanel>
             </Button>
-            <WebBrowser Name="WebBrowser1" HorizontalAlignment="Left" Height="200" Margin="10,105,0,0" VerticalAlignment="Top" Width="224"/>
-            <TextBlock x:Name="descriptionLbl" TextWrapping="WrapWithOverflow" Text="Description" HorizontalAlignment="Left" Margin="249,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.148,-0.033" Width="530" Height="117"/>
-            <Label x:Name="durationLbl" Content="Label" HorizontalAlignment="Left" Margin="249,227,0,0" VerticalAlignment="Top" Width="530" FontSize="14"/>
-            <Image x:Name="rateImg1" HorizontalAlignment="Left"  Height="23" Margin="262,278,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
-            <Image x:Name="rateImg2" HorizontalAlignment="Left" Height="23" Margin="292,278,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
-            <Image x:Name="rateImg3" HorizontalAlignment="Left" Height="23" Margin="322,278,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
-            <Image x:Name="rateImg4" HorizontalAlignment="Left" Height="23" Margin="352,278,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
-            <Image x:Name="rateImg5" HorizontalAlignment="Left" Height="23" Margin="382,278,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
-            <Label x:Name="lblRate" Content="Label" HorizontalAlignment="Left" Margin="424,272,0,0" VerticalAlignment="Top" Width="115" FontSize="14"/>
-            <Label x:Name="lblWriter" Content="Label" HorizontalAlignment="Left" Margin="262,333,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
-            <Label x:Name="lblDirector" Content="Label" HorizontalAlignment="Left" Margin="262,359,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
-            <Label x:Name="lblYear" Content="Label" HorizontalAlignment="Left" Margin="262,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
-            <Label x:Name="lblLanguage" Content="Label" HorizontalAlignment="Left" Margin="262,411,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
-            <Label x:Name="lblTime" Content="Select time to reserve seat" HorizontalAlignment="Left" Margin="262,437,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="198" FontSize="14"/>
-            <Button x:Name="btn12PM" Content="12:00 PM" HorizontalAlignment="Left" Margin="488,445,0,0" VerticalAlignment="Top" Width="56" Height="21" FontSize="10"/>
-            <Button x:Name="btn2PM" Content="02:00 PM" HorizontalAlignment="Left" Margin="549,445,0,0" VerticalAlignment="Top" Width="56" Height="21" FontSize="10"/>
-            <Button x:Name="btn4PM" Content="04:00 PM" HorizontalAlignment="Left" Margin="610,445,0,0" VerticalAlignment="Top" Width="56" Height="21" FontSize="10"/>
-            <Button x:Name="btn6PM" Content="06:00 PM" HorizontalAlignment="Left" Margin="671,445,0,0" VerticalAlignment="Top" Width="56" Height="21" RenderTransformOrigin="2.207,0.5" FontSize="10"/>
-            <Button x:Name="btn8PM" Content="08:00 PM" HorizontalAlignment="Left" Margin="732,445,0,0" VerticalAlignment="Top" Width="56" Height="21" RenderTransformOrigin="2.207,0.5" FontSize="10"/>
-            <Button x:Name="btn10PM" Content="10:00 PM" HorizontalAlignment="Left" Margin="488,471,0,0" VerticalAlignment="Top" Width="56" Height="21" FontSize="10"/>
-            <Button x:Name="btn12AM" Content="12:00 AM" HorizontalAlignment="Left" Margin="549,471,0,0" VerticalAlignment="Top" Width="56" Height="21" FontSize="10"/>
+            <WebBrowser Name="WebBrowser1" HorizontalAlignment="Left" Height="200" Margin="10,69,0,0" VerticalAlignment="Top" Width="224"/>
+            <TextBlock x:Name="descriptionLbl" TextWrapping="WrapWithOverflow" Text="Description" HorizontalAlignment="Left" Margin="249,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.148,-0.033" Width="530" Height="169"/>
+            <Label x:Name="durationLbl" Content="Label" HorizontalAlignment="Left" Margin="249,239,0,0" VerticalAlignment="Top" Width="530" FontSize="14"/>
+            <Image x:Name="rateImg1" HorizontalAlignment="Left"  Height="23" Margin="254,298,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
+            <Image x:Name="rateImg2" HorizontalAlignment="Left" Height="23" Margin="284,298,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
+            <Image x:Name="rateImg3" HorizontalAlignment="Left" Height="23" Margin="314,298,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
+            <Image x:Name="rateImg4" HorizontalAlignment="Left" Height="23" Margin="344,298,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
+            <Image x:Name="rateImg5" HorizontalAlignment="Left" Height="23" Margin="374,298,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>
+            <Label x:Name="lblRate" Content="Label" HorizontalAlignment="Left" Margin="416,292,0,0" VerticalAlignment="Top" Width="115" FontSize="14"/>
+            <Label x:Name="lblWriter" Content="Label" HorizontalAlignment="Left" Margin="249,334,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
+            <Label x:Name="lblDirector" Content="Label" HorizontalAlignment="Left" Margin="249,391,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
+            <Label x:Name="lblYear" Content="Label" HorizontalAlignment="Left" Margin="249,446,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
+            <Label x:Name="lblLanguage" Content="Label" HorizontalAlignment="Left" Margin="249,503,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="530" FontSize="14"/>
+            <Label x:Name="lblTime" Content="Select time to reserve seat" HorizontalAlignment="Left" Margin="249,588,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.042,0.174" Width="198" FontSize="14"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="12" x:Name="btn12PM" Content="12:00 PM" HorizontalAlignment="Left" Margin="536,556,0,0" VerticalAlignment="Top" Width="159" Height="47" FontSize="10"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="2" x:Name="btn2PM" Content="02:00 PM" HorizontalAlignment="Left" Margin="700,556,0,0" VerticalAlignment="Top" Width="165" Height="47" FontSize="10"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="4" x:Name="btn4PM" Content="04:00 PM" HorizontalAlignment="Left" Margin="870,556,0,0" VerticalAlignment="Top" Width="171" Height="47" FontSize="10"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="6" x:Name="btn6PM" Content="06:00 PM" HorizontalAlignment="Left" Margin="1046,556,0,0" VerticalAlignment="Top" Width="163" Height="47" RenderTransformOrigin="2.207,0.5" FontSize="10"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="8" x:Name="btn8PM" Content="08:00 PM" HorizontalAlignment="Left" Margin="536,608,0,0" VerticalAlignment="Top" Width="159" Height="41" RenderTransformOrigin="2.207,0.5" FontSize="10"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="10" x:Name="btn10PM" Content="10:00 PM" HorizontalAlignment="Left" Margin="700,608,0,0" VerticalAlignment="Top" Width="165" Height="41" FontSize="10" RenderTransformOrigin="1.069,0.488"/>
+            <Button Click="ButtonReserve_OnClick" CommandParameter="24" x:Name="btn12AM" Content="12:00 AM" HorizontalAlignment="Left" Margin="870,608,0,0" VerticalAlignment="Top" Width="171" Height="41" FontSize="10"/>
         </Grid>
     </controls:KinectRegion>
 </Window>

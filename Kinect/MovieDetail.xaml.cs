@@ -113,5 +113,22 @@ namespace Kinect
             mainWindow.Show();
             this.Close();
         }
+
+        private void ButtonReserve_OnClick(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var now = DateTime.Now;
+            var houre = int.Parse(btn.CommandParameter.ToString());
+            var time = new DateTime(now.Year, now.Month, now.Day, houre+12, 0, 0);
+            var reservationData = new ReservationData
+            {
+                MovieId = this.MovieId,
+                ReservationTime = time
+            };
+            var reservation = new Reservation(reservationData);
+            reservation.Show();
+            this.Hide();
+
+        }
     }
 }

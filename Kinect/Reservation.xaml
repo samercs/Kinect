@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinect"
         mc:Ignorable="d"
-        Title="Reservation"  Height="503.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Loaded="MovieList_OnLoaded">
+        Title="Reservation"  Height="563.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" Loaded="MovieList_OnLoaded">
     <Grid>
         <Label Name="Label1" HorizontalContentAlignment="Center" Content="Reservation" HorizontalAlignment="Left" Margin="197,10,0,0" VerticalAlignment="Top" Width="407" Height="56" FontSize="24"/>
         <Button Click="ButtonClose_OnClick" BorderThickness="0" Background="White"  Margin="732,10,10,407" Height="Auto" Width="Auto" Grid.Column="0">
@@ -18,5 +18,61 @@
                 <Image x:Name="imgBack"  HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
             </StackPanel>
         </Button>
+        <Grid Name="Grid1">
+            <Button Name="BtnA1" Click="ButtonSeat_OnClick" Content="A1" HorizontalAlignment="Left" Margin="30,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA2" Click="ButtonSeat_OnClick" Content="A2" HorizontalAlignment="Left" Margin="108,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA3" Click="ButtonSeat_OnClick" Content="A3" HorizontalAlignment="Left" Margin="189,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA4" Click="ButtonSeat_OnClick" Content="A4" HorizontalAlignment="Left" Margin="270,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA5" Click="ButtonSeat_OnClick" Content="A5" HorizontalAlignment="Left" Margin="357,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA6" Click="ButtonSeat_OnClick" Content="A6" HorizontalAlignment="Left" Margin="441,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA7" Click="ButtonSeat_OnClick" Content="A7" HorizontalAlignment="Left" Margin="531,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA8" Click="ButtonSeat_OnClick" Content="A8" HorizontalAlignment="Left" Margin="620,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnA9" Click="ButtonSeat_OnClick" Content="A9" HorizontalAlignment="Left" Margin="702,97,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+
+            <Button Name="BtnB1" Click="ButtonSeat_OnClick" Content="B1" HorizontalAlignment="Left" Margin="30,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB2" Click="ButtonSeat_OnClick" Content="B2" HorizontalAlignment="Left" Margin="108,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB3" Click="ButtonSeat_OnClick" Content="B3" HorizontalAlignment="Left" Margin="189,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB4" Click="ButtonSeat_OnClick" Content="B4" HorizontalAlignment="Left" Margin="270,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB5" Click="ButtonSeat_OnClick" Content="B5" HorizontalAlignment="Left" Margin="357,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB6" Click="ButtonSeat_OnClick" Content="B6" HorizontalAlignment="Left" Margin="441,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB7" Click="ButtonSeat_OnClick" Content="B7" HorizontalAlignment="Left" Margin="531,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB8" Click="ButtonSeat_OnClick" Content="B8" HorizontalAlignment="Left" Margin="620,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnB9" Click="ButtonSeat_OnClick" Content="B9" HorizontalAlignment="Left" Margin="702,169,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+
+            <Button Name="BtnC1" Click="ButtonSeat_OnClick" Content="C1" HorizontalAlignment="Left" Margin="30,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC2" Click="ButtonSeat_OnClick" Content="C2" HorizontalAlignment="Left" Margin="108,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC3" Click="ButtonSeat_OnClick" Content="C3" HorizontalAlignment="Left" Margin="189,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC4" Click="ButtonSeat_OnClick" Content="C4" HorizontalAlignment="Left" Margin="270,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC5" Click="ButtonSeat_OnClick" Content="C5" HorizontalAlignment="Left" Margin="357,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC6" Click="ButtonSeat_OnClick" Content="C6" HorizontalAlignment="Left" Margin="441,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC7" Click="ButtonSeat_OnClick" Content="C7" HorizontalAlignment="Left" Margin="531,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC8" Click="ButtonSeat_OnClick" Content="C8" HorizontalAlignment="Left" Margin="620,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnC9" Click="ButtonSeat_OnClick" Content="C9" HorizontalAlignment="Left" Margin="702,241,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+
+            <Button Name="BtnD1" Click="ButtonSeat_OnClick" Content="D1" HorizontalAlignment="Left" Margin="30,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD2"  Click="ButtonSeat_OnClick" Content="D2" HorizontalAlignment="Left" Margin="108,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD3" Click="ButtonSeat_OnClick" Content="D3" HorizontalAlignment="Left" Margin="189,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD4" Click="ButtonSeat_OnClick" Content="D4" HorizontalAlignment="Left" Margin="270,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD5" Click="ButtonSeat_OnClick" Content="D5" HorizontalAlignment="Left" Margin="357,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD6" Click="ButtonSeat_OnClick" Content="D6" HorizontalAlignment="Left" Margin="441,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD7" Click="ButtonSeat_OnClick" Content="D7" HorizontalAlignment="Left" Margin="531,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD8" Click="ButtonSeat_OnClick" Content="D8" HorizontalAlignment="Left" Margin="620,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnD9" Click="ButtonSeat_OnClick" Content="D9" HorizontalAlignment="Left" Margin="702,313,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+
+            <Button Name="BtnE1" Click="ButtonSeat_OnClick" Content="E1" HorizontalAlignment="Left" Margin="30,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE2" Click="ButtonSeat_OnClick" Content="E2" HorizontalAlignment="Left" Margin="108,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE3" Click="ButtonSeat_OnClick" Content="E3" HorizontalAlignment="Left" Margin="189,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE4" Click="ButtonSeat_OnClick" Content="E4" HorizontalAlignment="Left" Margin="270,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE5" Click="ButtonSeat_OnClick" Content="E5" HorizontalAlignment="Left" Margin="357,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE6" Click="ButtonSeat_OnClick" Content="E6" HorizontalAlignment="Left" Margin="441,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE7" Click="ButtonSeat_OnClick" Content="E7" HorizontalAlignment="Left" Margin="531,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE8" Click="ButtonSeat_OnClick" Content="E8" HorizontalAlignment="Left" Margin="620,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            <Button Name="BtnE9" Click="ButtonSeat_OnClick" Content="E9" HorizontalAlignment="Left" Margin="702,385,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
+            
+            
+            <Button  Click="ButtonProceed_OnClick" Content="Proceed" HorizontalAlignment="Left" Margin="270,468,0,0" VerticalAlignment="Top" Width="251" Height="55"/>
+
+
+        </Grid>
     </Grid>
 </Window>

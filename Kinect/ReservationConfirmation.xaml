@@ -1,0 +1,14 @@
+﻿<Window x:Class="Kinect.ReservationConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect"
+        mc:Ignorable="d"
+        Title="Reservation Confirmation" Height="516.7" Width="583" Loaded="MovieList_OnLoaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Name="Label1" Content="Your Reservation Id &#xD;&#xA;{0} &#xD;&#xA;ready for your confirmation. &#xD;&#xA;You are reserved this seat &#xD;&#xA;{1}." HorizontalAlignment="Center" Margin="10,10,10,203" VerticalAlignment="Center" Height="273" Width="555"/>
+        <Button Click="ButtonConfirm_OnClick" Content="Confirm" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="555" Height="47"/>
+
+    </Grid>
+</Window>
