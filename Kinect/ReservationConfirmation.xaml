@@ -4,11 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinect"
+        xmlns:controls="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
         Title="Reservation Confirmation" Height="516.7" Width="583" Loaded="MovieList_OnLoaded" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Label Name="Label1" Content="Your Reservation Id &#xD;&#xA;{0} &#xD;&#xA;ready for your confirmation. &#xD;&#xA;You are reserved this seat &#xD;&#xA;{1}." HorizontalAlignment="Center" Margin="10,10,10,203" VerticalAlignment="Center" Height="273" Width="555"/>
-        <Button Click="ButtonConfirm_OnClick" Content="Confirm" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="555" Height="47"/>
-
-    </Grid>
+    <controls:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            <controls:KinectUserViewer Grid.Column="0" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="300,10,329,0" Width="92" ></controls:KinectUserViewer>
+            <Label Name="Label1" Content="Your Reservation Id &#xD;&#xA;{0} &#xD;&#xA;ready for your confirmation. &#xD;&#xA;You are reserved this seat &#xD;&#xA;{1}." HorizontalAlignment="Center" Margin="10,119,10,94" VerticalAlignment="Center" Height="273" Width="555"/>
+            <Button Click="ButtonConfirm_OnClick" Content="Confirm" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="555" Height="47"/>
+            <Button Click="ButtonClose_OnClick"  BorderThickness="0" VerticalContentAlignment="Top" Background="White"   Height="42" Width="42" Grid.Column="0" Margin="500,10,10,434">
+                <StackPanel>
+                    <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
+                </StackPanel>
+            </Button>
+            <Button Click="ButtonBack_OnClick"  HorizontalContentAlignment="Left" VerticalContentAlignment="Top" BorderThickness="0" Background="White"   Height="42" Width="42" Grid.Column="0" Margin="10,10,523,434">
+                <StackPanel>
+                    <Image x:Name="imgBack"  HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </controls:KinectRegion>
 </Window>

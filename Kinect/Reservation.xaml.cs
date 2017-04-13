@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Kinect.DB;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace Kinect
 {
@@ -35,9 +37,12 @@ namespace Kinect
         public Reservation(ReservationData reservationData)
         {
             this.ReservationData = reservationData;
-
             Seats = new List<string>();
             InitializeComponent();
+            KinectRegion.SetKinectRegion(this, kinectRegion);
+            App app = ((App)Application.Current);
+            app.KinectRegion = kinectRegion;
+            this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
             LoadData();
         }
 
@@ -46,7 +51,7 @@ namespace Kinect
             var db = new Database();
             db.AddParameter("@id", ReservationData.MovieId);
             db.AddParameter("@time", ReservationData.ReservationTime);
-            DataTable data = db.ExecuteDataTable("select ReservationSeat.SeatNo from ReservationSeat inner join reservation on (ReservationSeat.ReservationId = reservation.id) where reservation.MovieId=@id and ReservationTime=@time");
+            DataTable data = db.ExecuteDataTable("select ReservationSeat.SeatNo from ReservationSeat inner join reservation on (ReservationSeat.ReservationId = reservation.id) where reservation.MovieId=@id and ReservationTime=@time and reservation.Status=1");
             foreach (DataRow row in data.Rows)
             {
                 var btn = UIHelper.FindChild<Button>(Grid1, $"Btn{row["seatNo"]}");
@@ -97,6 +102,11 @@ namespace Kinect
 
         private void ButtonProceed_OnClick(object sender, RoutedEventArgs e)
         {
+            if (Seats.Count <= 0)
+            {
+                MessageBox.Show("Please select at least on seat.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             var db = new Database();
             db.AddParameter("@ReservationTime", ReservationData.ReservationTime);
             db.AddParameter("@MovieId", ReservationData.MovieId);

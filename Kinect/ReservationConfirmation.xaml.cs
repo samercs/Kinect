@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Kinect.DB;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace Kinect
 {
@@ -37,6 +39,10 @@ namespace Kinect
         {
             ReservationId = id;
             InitializeComponent();
+            KinectRegion.SetKinectRegion(this, kinectRegion);
+            App app = ((App)Application.Current);
+            app.KinectRegion = kinectRegion;
+            this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
             LoadData();
         }
 
@@ -73,6 +79,34 @@ namespace Kinect
             MessageBox.Show("Your reservation has been confirmed successfully. thank you");
             var main = new MainWindow();
             main.Show();
+            this.Hide();
+        }
+
+        private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            DeleteReservation();
+            Application.Current.Shutdown();
+        }
+
+        private void DeleteReservation()
+        {
+            var db = new Database();
+            db.AddParameter("@id", this.ReservationId);
+            db.ExecuteNonQuery("delete from ReservationSeat where ReservationId=@id");
+            db.AddParameter("@id", this.ReservationId);
+            db.ExecuteNonQuery("delete from Reservation where Id=@id");
+        }
+
+        private void ButtonBack_OnClick(object sender, RoutedEventArgs e)
+        {
+
+            var db = new Database();
+            db.AddParameter("@id", this.ReservationId);
+            DataTable reservation = db.ExecuteDataTable("select * from reservation where id=@id");
+            var movieId = reservation.Rows[0]["movieId"].ToString();
+            DeleteReservation();
+            var movieDetail = new MovieDetail(int.Parse(movieId));
+            movieDetail.Show();
             this.Hide();
         }
     }
