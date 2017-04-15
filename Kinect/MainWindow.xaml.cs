@@ -33,6 +33,8 @@ namespace Kinect
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
         public MainWindow()
         {
+            
+
             InitializeComponent();
             KinectRegion.SetKinectRegion(this, kinectRegion);
             App app = ((App)Application.Current);

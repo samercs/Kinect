@@ -1,0 +1,63 @@
+﻿<Window x:Class="Kinect.ReservationSummary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect"
+        xmlns:controls="http://schemas.microsoft.com/kinect/2014"
+        mc:Ignorable="d"
+        Title="ReservationSummary" Height="550" Width="827" WindowStartupLocation="CenterScreen" Loaded="MovieList_OnLoaded">
+    <controls:KinectRegion x:Name="kinectRegion">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="600" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50"  />
+                <RowDefinition Height="100"  />
+                <RowDefinition Height="50"  />
+                <RowDefinition Height="50"  />
+                <RowDefinition Height="50"  />
+            </Grid.RowDefinitions>
+            <controls:KinectUserViewer Grid.Column="1" Grid.Row="0" Height="46" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="72" Margin="154,0,375,0" />
+            <StackPanel Grid.Column="0"  Grid.Row="1">
+                <Label Content="Reservation Id" Height="43" FontSize="22" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <Label Name="LblReservationId" Content="1" Height="43" FontSize="22"  />
+            </StackPanel>
+            <StackPanel Grid.Column="0"  Grid.Row="2">
+                <Label Content="Reservation Seats" Height="43" FontSize="22"  />
+            </StackPanel>
+            <StackPanel Grid.Column="1"  Grid.Row="2">
+                <Label Name="LblReservationSeats" Content="A1, A2" Height="43" FontSize="22"  />
+            </StackPanel>
+            <StackPanel Grid.Column="0"  Grid.Row="3">
+                <Label Content="Reservation Snaks" Height="43" FontSize="22"  />
+            </StackPanel>
+            <StackPanel Grid.Column="1"  Grid.Row="3">
+                <Label FontSize="22">
+                    <TextBlock Name="LblReservationSnaks" TextWrapping="Wrap" />
+                </Label>
+            </StackPanel>
+            <StackPanel Grid.Column="0"  Grid.Row="4">
+                <Label Content="Reservation Total" Height="43" FontSize="22"  />
+            </StackPanel>
+            <StackPanel Grid.Column="1"  Grid.Row="4">
+                <Label Name="LblReservationTotal" Content="KD 15" Height="43" FontSize="22"  />
+            </StackPanel>
+            <StackPanel Grid.Column="0"  Grid.Row="5" Grid.ColumnSpan="2">
+                <Label HorizontalContentAlignment="Center" Foreground="#FFF01515">
+                    <Label.Content>Note : Proceed counter within 15 minutes to pay &amp; collect your bickets.</Label.Content>
+                </Label>
+            </StackPanel>
+            <StackPanel Grid.Column="0"  Grid.Row="6" Grid.ColumnSpan="2">
+                <Button Click="ButtonOk_OnClick" Content="Ok" Height="45" HorizontalAlignment="Center" Margin="27,0,67,0" Width="708" />
+            </StackPanel>
+        </Grid>
+    </controls:KinectRegion>
+</Window>

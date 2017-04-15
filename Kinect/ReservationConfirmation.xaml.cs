@@ -74,12 +74,25 @@ namespace Kinect
         private void ButtonConfirm_OnClick(object sender, RoutedEventArgs e)
         {
             var db = new Database();
+            var tool = new Tool(db);
             db.AddParameter("@id", this.ReservationId);
             db.ExecuteNonQuery("update reservation set status=1 where id=@id");
-            MessageBox.Show("Your reservation has been confirmed successfully. thank you");
-            var main = new MainWindow();
-            main.Show();
-            this.Hide();
+            var total = tool.GetOrderTotal(this.ReservationId);
+            if (
+                MessageBox.Show(
+                    $"Your reservation has been confirmed successfully. Your order total is KD {total}. Do you need to add snaks to your order?",
+                    "Order Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                var addSnak = new AddSnak(this.ReservationId);
+                addSnak.Show();
+                this.Hide();
+            }
+            else
+            {
+                var main = new MainWindow();
+                main.Show();
+                this.Hide();
+            }
         }
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)

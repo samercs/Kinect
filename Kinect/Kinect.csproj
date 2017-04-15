@@ -79,14 +79,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddSnak.xaml.cs">
+      <DependentUpon>AddSnak.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DB\FindChild.cs" />
+    <Compile Include="DB\Prices.cs" />
     <Compile Include="DB\ReservationData.cs" />
+    <Compile Include="DB\Tool.cs" />
     <Compile Include="Reservation.xaml.cs">
       <DependentUpon>Reservation.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReservationConfirmation.xaml.cs">
       <DependentUpon>ReservationConfirmation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReservationSummary.xaml.cs">
+      <DependentUpon>ReservationSummary.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddSnak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Common\StandardStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReservationConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReservationSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +187,10 @@
       <DependentUpon>MoviesDb.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\NACHOS.jpg" />
+    <Resource Include="Images\popcorn.jpg" />
+    <Resource Include="Images\pipsi.jpg" />
+    <Resource Include="Images\water.jpg" />
     <Resource Include="HandPointers\HighlightRectangle.png" />
     <Resource Include="Images\Logo.png" />
     <Resource Include="Images\2.jpg" />

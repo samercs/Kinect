@@ -1,0 +1,76 @@
+﻿<Window x:Class="Kinect.AddSnak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect"
+        xmlns:controls="http://schemas.microsoft.com/kinect/2014"
+        mc:Ignorable="d"
+        Title="Add Snak" Height="503.873" Width="807.412" Loaded="MovieList_OnLoaded" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center">
+    <controls:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            <controls:KinectUserViewer Grid.Column="0" Height="48" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="66" Margin="354,0,379,0" ></controls:KinectUserViewer>
+            <Button Click="ButtonClose_OnClick"  BorderThickness="0" HorizontalAlignment="Right" VerticalContentAlignment="Top" Background="White"   Height="42" Width="42" Margin="0,6,7,425" Grid.Column="0">
+                <StackPanel>
+                    <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" />
+                </StackPanel>
+            </Button>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="15,50,0,15">
+                    <Image Stretch="Fill" Source="Images/popcorn.jpg" Width="150" Height="100" />
+                    <Label Content="Type"  FontSize="22" VerticalContentAlignment="Center"/>
+                    <ComboBox x:Name="ComboBoxPopCornType" Height="52" VerticalAlignment="Center" Margin="10,10,10,0">
+                        <ComboBoxItem Content="Large"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="Small"/>
+                    </ComboBox>
+                    <Label Content="Quantity"  FontSize="22"/>
+                    <TextBox x:Name="ComboBoxPopCornQ" VerticalContentAlignment="Center" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" Margin="10,10,10,0" />
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="15,50,15,0">
+                    <Image Stretch="Fill" Source="Images/pipsi.jpg" Width="150" Height="100" />
+                    <Label Content="Type"  FontSize="22"/>
+                    <ComboBox x:Name="ComboBoxPipsiType" Height="52" Margin="10,10,10,0">
+                        <ComboBoxItem Content="Large"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="Small"/>
+                    </ComboBox>
+                    <Label Content="Quantity"  FontSize="22"/>
+                    <TextBox x:Name="ComboBoxPipsiQ" VerticalContentAlignment="Center" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" Margin="10,10,10,0" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="15,50,15,0">
+                    <Image Stretch="Fill" Source="Images/water.jpg" Width="150" Height="100" />
+                    <Label Content="Type"  FontSize="22"/>
+                    <ComboBox x:Name="ComboBoxWaterType" Height="52" Margin="10,10,10,0">
+                        <ComboBoxItem Content="Large"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="Small"/>
+                    </ComboBox>
+                    <Label Content="Quantity"  FontSize="22"/>
+                    <TextBox x:Name="ComboBoxWaterQ" VerticalContentAlignment="Center" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" Margin="10,10,10,0" />
+                </StackPanel>
+                <StackPanel Grid.Column="3" Margin="15,50,15,0">
+                    <Image Stretch="Fill" Source="Images/NACHOS.jpg" Width="150" Height="100" />
+                    <Label Content="Type"  FontSize="22"/>
+                    <ComboBox x:Name="ComboBoxNashosType" Height="52" Margin="10,10,10,0">
+                        <ComboBoxItem Content="Large"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="Small"/>
+                    </ComboBox>
+                    <Label Content="Quantity"  FontSize="22"/>
+                    <TextBox x:Name="ComboBoxNashosQ" VerticalContentAlignment="Center" Margin="10,10,10,0" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" />
+                </StackPanel>
+
+                <Button Content="Confirm And Save Order" Grid.Column="0" Grid.ColumnSpan="4" Width="Auto" Margin="15,382,15,41" Height="Auto" Click="Button_Click" />
+            </Grid>
+        </Grid>
+    </controls:KinectRegion>
+</Window>
