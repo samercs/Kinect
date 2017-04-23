@@ -62,7 +62,7 @@ namespace Kinect
             var txt = Label1.Content.ToString();
 
             Label1.Content = txt.Replace("{0}", reservation.Rows[0]["id"] + " at " + reservation.Rows[0]["ReservationTime"]).Replace("{1}", string.Join(",", seatList));
-            
+
         }
 
         private void MovieList_OnLoaded(object sender, RoutedEventArgs e)
@@ -78,21 +78,12 @@ namespace Kinect
             db.AddParameter("@id", this.ReservationId);
             db.ExecuteNonQuery("update reservation set status=1 where id=@id");
             var total = tool.GetOrderTotal(this.ReservationId);
-            if (
-                MessageBox.Show(
-                    $"Your reservation has been confirmed successfully. Your order total is KD {total}. Do you need to add snaks to your order?",
-                    "Order Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
-            {
-                var addSnak = new AddSnak(this.ReservationId);
-                addSnak.Show();
-                this.Hide();
-            }
-            else
-            {
-                var main = new MainWindow();
-                main.Show();
-                this.Hide();
-            }
+            Label1.Content =
+                $"Your reservation has been confirmed successfully.{Environment.NewLine} Your order total is KD {total}. {Environment.NewLine} Do you need to add snaks to your order?";
+            ButtonConfirm.Visibility = Visibility.Hidden;
+            ButtonYes.Visibility = Visibility.Visible;
+            ButtonNo.Visibility = Visibility.Visible;
+
         }
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
@@ -120,6 +111,20 @@ namespace Kinect
             DeleteReservation();
             var movieDetail = new MovieDetail(int.Parse(movieId));
             movieDetail.Show();
+            this.Hide();
+        }
+
+        private void ButtonYes_OnClick(object sender, RoutedEventArgs e)
+        {
+            var addSnak = new AddSnak(this.ReservationId);
+            addSnak.Show();
+            this.Hide();
+        }
+
+        private void ButtonNo_OnClick(object sender, RoutedEventArgs e)
+        {
+            var main = new MainWindow();
+            main.Show();
             this.Hide();
         }
     }

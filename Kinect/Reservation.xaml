@@ -21,6 +21,7 @@
                     <Image x:Name="imgBack"  HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
                 </StackPanel>
             </Button>
+            <Label Name="LblInfo" Content="" Foreground="Red" FontSize="22" HorizontalContentAlignment="Center" Margin="0,70,0,0"></Label>
             <Grid Name="Grid1">
                 <Button Name="BtnA1" Click="ButtonSeat_OnClick" Content="A1" HorizontalAlignment="Left" Margin="30,167,0,0" VerticalAlignment="Top" Width="60" Height="52"/>
                 <Button Name="BtnA2" Click="ButtonSeat_OnClick" Content="A2" HorizontalAlignment="Left" Margin="108,167,0,0" VerticalAlignment="Top" Width="60" Height="52"/>

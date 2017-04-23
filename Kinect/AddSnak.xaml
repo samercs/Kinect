@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Kinect"
         xmlns:controls="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
-        Title="Add Snak" Height="503.873" Width="807.412" Loaded="MovieList_OnLoaded" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center">
+        Title="Add Snak" Height="947.964" Width="813.818" Loaded="MovieList_OnLoaded" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center">
     <controls:KinectRegion x:Name="kinectRegion">
         <Grid>
             <controls:KinectUserViewer Grid.Column="0" Height="48" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="66" Margin="354,0,379,0" ></controls:KinectUserViewer>
-            <Button Click="ButtonClose_OnClick"  BorderThickness="0" HorizontalAlignment="Right" VerticalContentAlignment="Top" Background="White"   Height="42" Width="42" Margin="0,6,7,425" Grid.Column="0">
+            <Button Click="ButtonClose_OnClick"  BorderThickness="0" HorizontalAlignment="Right" VerticalContentAlignment="Top" Background="White"   Height="42" Width="42" Margin="0,6,7,870" Grid.Column="0">
                 <StackPanel>
                     <Image x:Name="imgClose" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" />
                 </StackPanel>
@@ -26,50 +26,45 @@
                 <StackPanel Grid.Column="0" Margin="15,50,0,15">
                     <Image Stretch="Fill" Source="Images/popcorn.jpg" Width="150" Height="100" />
                     <Label Content="Type"  FontSize="22" VerticalContentAlignment="Center"/>
-                    <ComboBox x:Name="ComboBoxPopCornType" Height="52" VerticalAlignment="Center" Margin="10,10,10,0">
-                        <ComboBoxItem Content="Large"/>
-                        <ComboBoxItem Content="Medium"/>
-                        <ComboBoxItem Content="Small"/>
-                    </ComboBox>
+                    <Button Click="ComboBoxPopCornTypeL_OnClick" Name="ComboBoxPopCornTypeL" Height="50" FontSize="22" Content="Large" Width="150" />
+                    <Button Click="ComboBoxPopCornTypeL_OnClick" Name="ComboBoxPopCornTypeM" Height="50" FontSize="22" Content="Meduim" Width="150" />
+                    <Button Click="ComboBoxPopCornTypeL_OnClick" Name="ComboBoxPopCornTypeS" Height="50" FontSize="22" Content="Small" Width="150" />
                     <Label Content="Quantity"  FontSize="22"/>
-                    <TextBox x:Name="ComboBoxPopCornQ" VerticalContentAlignment="Center" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" Margin="10,10,10,0" />
-
+                    <Slider IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="ComboBoxPopCornQ_OnValueChanged" Name="ComboBoxPopCornQ"  Minimum="1" Maximum="10" Value="1" Margin="0,0,10,0" />
+                    <Label HorizontalContentAlignment="Center" x:Name="PopCornQ" Content="1"  FontSize="22" Margin="0,0,18,0"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="15,50,15,0">
                     <Image Stretch="Fill" Source="Images/pipsi.jpg" Width="150" Height="100" />
-                    <Label Content="Type"  FontSize="22"/>
-                    <ComboBox x:Name="ComboBoxPipsiType" Height="52" Margin="10,10,10,0">
-                        <ComboBoxItem Content="Large"/>
-                        <ComboBoxItem Content="Medium"/>
-                        <ComboBoxItem Content="Small"/>
-                    </ComboBox>
+                    <Label Content="Type"  FontSize="22" VerticalContentAlignment="Center"/>
+                    <Button Click="ComboBoxPipsiTypeL_OnClick" Name="ComboBoxPipsiTypeL" Height="50" FontSize="22" Content="Large" Width="150" />
+                    <Button Click="ComboBoxPipsiTypeL_OnClick" Name="ComboBoxPipsiTypeM" Height="50" FontSize="22" Content="Meduim" Width="150" />
+                    <Button Click="ComboBoxPipsiTypeL_OnClick" Name="ComboBoxPipsiTypeS" Height="50" FontSize="22" Content="Small" Width="150" />
                     <Label Content="Quantity"  FontSize="22"/>
-                    <TextBox x:Name="ComboBoxPipsiQ" VerticalContentAlignment="Center" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" Margin="10,10,10,0" />
+                    <Slider IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="ComboBoxPipsiQ_OnValueChanged" Name="ComboBoxPipsiQ"  Minimum="1" Maximum="10" Value="1" Margin="0,0,10,0" />
+                    <Label HorizontalContentAlignment="Center" x:Name="PipsiQ" Content="1"  FontSize="22" Margin="0,0,18,0"/>
                 </StackPanel>
                 <StackPanel Grid.Column="2" Margin="15,50,15,0">
                     <Image Stretch="Fill" Source="Images/water.jpg" Width="150" Height="100" />
                     <Label Content="Type"  FontSize="22"/>
-                    <ComboBox x:Name="ComboBoxWaterType" Height="52" Margin="10,10,10,0">
-                        <ComboBoxItem Content="Large"/>
-                        <ComboBoxItem Content="Medium"/>
-                        <ComboBoxItem Content="Small"/>
-                    </ComboBox>
+                    <Button Click="ComboBoxWaterTypeL_OnClick" Name="ComboBoxWaterTypeL" Height="50" FontSize="22" Content="Large" Width="150" />
+                    <Button Click="ComboBoxWaterTypeL_OnClick" Name="ComboBoxWaterTypeM" Height="50" FontSize="22" Content="Meduim" Width="150" />
+                    <Button Click="ComboBoxWaterTypeL_OnClick" Name="ComboBoxWaterTypeS" Height="50" FontSize="22" Content="Small" Width="150" />
                     <Label Content="Quantity"  FontSize="22"/>
-                    <TextBox x:Name="ComboBoxWaterQ" VerticalContentAlignment="Center" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" Margin="10,10,10,0" />
+                    <Slider IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="ComboBoxWaterQ_OnValueChanged" Name="ComboBoxWaterQ"  Minimum="1" Maximum="10" Value="1" Margin="0,0,10,0" />
+                    <Label HorizontalContentAlignment="Center" x:Name="WaterQ" Content="1"  FontSize="22" Margin="0,0,18,0"/>
                 </StackPanel>
                 <StackPanel Grid.Column="3" Margin="15,50,15,0">
                     <Image Stretch="Fill" Source="Images/NACHOS.jpg" Width="150" Height="100" />
                     <Label Content="Type"  FontSize="22"/>
-                    <ComboBox x:Name="ComboBoxNashosType" Height="52" Margin="10,10,10,0">
-                        <ComboBoxItem Content="Large"/>
-                        <ComboBoxItem Content="Medium"/>
-                        <ComboBoxItem Content="Small"/>
-                    </ComboBox>
+                    <Button Click="ComboBoxNachosTypeL_OnClick" Name="ComboBoxNachosTypeL" Height="50" FontSize="22" Content="Large" Width="150" />
+                    <Button Click="ComboBoxNachosTypeL_OnClick" Name="ComboBoxNachosTypeM" Height="50" FontSize="22" Content="Meduim" Width="150" />
+                    <Button Click="ComboBoxNachosTypeL_OnClick" Name="ComboBoxNachosTypeS" Height="50" FontSize="22" Content="Small" Width="150" />
                     <Label Content="Quantity"  FontSize="22"/>
-                    <TextBox x:Name="ComboBoxNashosQ" VerticalContentAlignment="Center" Margin="10,10,10,0" TextAlignment="Center" Text="1" PreviewTextInput="NumberValidationTextBox"    Height="45" />
+                    <Slider IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="ComboBoxNachosQ_OnValueChanged" Name="ComboBoxNachosQ"  Minimum="1" Maximum="10" Value="1" Margin="0,0,10,0" />
+                    <Label HorizontalContentAlignment="Center" x:Name="NachosQ" Content="1"  FontSize="22" Margin="0,0,18,0"/>
                 </StackPanel>
 
-                <Button Content="Confirm And Save Order" Grid.Column="0" Grid.ColumnSpan="4" Width="Auto" Margin="15,382,15,41" Height="Auto" Click="Button_Click" />
+                <Button Content="Confirm And Save Order" Grid.Column="0" Grid.ColumnSpan="4" Width="Auto" Margin="15,774,15,10" Height="Auto" Click="Button_Click" />
             </Grid>
         </Grid>
     </controls:KinectRegion>

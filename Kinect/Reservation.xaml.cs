@@ -25,7 +25,7 @@ namespace Kinect
     {
 
         public ReservationData ReservationData { get; set; }
-        private IList<string> Seats { get;set; }
+        private IList<string> Seats { get; set; }
 
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
@@ -59,7 +59,7 @@ namespace Kinect
                 {
                     btn.IsEnabled = false;
                 }
-                
+
             }
         }
 
@@ -74,7 +74,7 @@ namespace Kinect
             var movieDetail = new MovieDetail(this.ReservationData.MovieId);
             movieDetail.Show();
             this.Hide();
-            
+
         }
 
         private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
@@ -104,9 +104,10 @@ namespace Kinect
         {
             if (Seats.Count <= 0)
             {
-                MessageBox.Show("Please select at least on seat.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                LblInfo.Content = "Please select at least on seat.";
                 return;
             }
+            LblInfo.Content = "";
             var db = new Database();
             db.AddParameter("@ReservationTime", ReservationData.ReservationTime);
             db.AddParameter("@MovieId", ReservationData.MovieId);

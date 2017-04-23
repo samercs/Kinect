@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kinect"
         xmlns:controls="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
-        Title="ReservationSummary" Height="550" Width="827" WindowStartupLocation="CenterScreen" Loaded="MovieList_OnLoaded">
+        Title="ReservationSummary" Height="947.964" Width="813.818" WindowStartupLocation="CenterScreen" Loaded="MovieList_OnLoaded">
     <controls:KinectRegion x:Name="kinectRegion">
         <Grid>
 
@@ -51,12 +51,12 @@
                 <Label Name="LblReservationTotal" Content="KD 15" Height="43" FontSize="22"  />
             </StackPanel>
             <StackPanel Grid.Column="0"  Grid.Row="5" Grid.ColumnSpan="2">
-                <Label HorizontalContentAlignment="Center" Foreground="#FFF01515">
+                <Label HorizontalContentAlignment="Center" Foreground="#FFF01515" FontSize="22">
                     <Label.Content>Note : Proceed counter within 15 minutes to pay &amp; collect your bickets.</Label.Content>
                 </Label>
             </StackPanel>
             <StackPanel Grid.Column="0"  Grid.Row="6" Grid.ColumnSpan="2">
-                <Button Click="ButtonOk_OnClick" Content="Ok" Height="45" HorizontalAlignment="Center" Margin="27,0,67,0" Width="708" />
+                <Button FontSize="22" Click="ButtonOk_OnClick" Content="Ok" Height="45" HorizontalAlignment="Center" Margin="10,0" Width="782" />
             </StackPanel>
         </Grid>
     </controls:KinectRegion>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kinect"
         xmlns:controls="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
-        Title="Main Window" Height="503.873" Width="807.412" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" 
+        Title="Main Window" Height="947.964" Width="813.818" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen" 
         Loaded="MainWindow_OnLoaded" >
 
     <controls:KinectRegion x:Name="kinectRegion">
@@ -16,7 +16,7 @@
             </Grid.ColumnDefinitions>
             <controls:KinectUserViewer Grid.Column="0" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="358,50,329,0" Width="92" ></controls:KinectUserViewer>
             <Grid Grid.Column="0">
-                <ItemsControl Name="ItemsControl" Margin="0,164,0,0">
+                <ItemsControl Name="ItemsControl" Margin="0,100,0,0">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Button Click="ButtonBase_OnClick" CommandParameter="{Binding Value}" FontSize="22" Margin="50,0,50,50" Content="{Binding Name}" Width="250" Height="100" />
@@ -29,7 +29,7 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
                 <Label FontSize="30" HorizontalContentAlignment="Center" Content="Select  the movie genre" HorizontalAlignment="Left" Margin="221,0,0,0" VerticalAlignment="Top" Width="366"/>
-                <Button BorderThickness="0" Background="White" Click="ButtonBack_OnClick" Margin="698,10,10,383" Height="Auto" Width="Auto" CommandParameter="{Binding Id}" Grid.Column="0">
+                <Button BorderThickness="0" Background="White" Click="ButtonBack_OnClick" Margin="698,10,10,840" Height="Auto" Width="Auto" CommandParameter="{Binding Id}" Grid.Column="0">
                     <StackPanel>
                         <Image x:Name="imgBack" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" RenderTransformOrigin="-0.071,0.548"/>
                     </StackPanel>

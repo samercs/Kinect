@@ -33,7 +33,7 @@ namespace Kinect
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
         public MainWindow()
         {
-            
+
 
             InitializeComponent();
             KinectRegion.SetKinectRegion(this, kinectRegion);
@@ -41,6 +41,11 @@ namespace Kinect
             app.KinectRegion = kinectRegion;
             this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
             LoadData();
+
+
+            //var form = new AddSnak(20);
+            //form.Show();
+            //this.Hide();
         }
 
         private void LoadData()
@@ -62,7 +67,7 @@ namespace Kinect
             this.Close();
         }
 
-        
+
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {

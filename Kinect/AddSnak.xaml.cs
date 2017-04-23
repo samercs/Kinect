@@ -20,7 +20,7 @@ using Microsoft.Kinect.Wpf.Controls;
 
 namespace Kinect
 {
-    
+
     public partial class AddSnak : Window
     {
         private const int GWL_STYLE = -16;
@@ -32,6 +32,10 @@ namespace Kinect
 
 
         public int ReservationId { get; set; }
+        private string PopCornType { get; set; }
+        private string PipiType { get; set; }
+        private string WaterType { get; set; }
+        private string NachosType { get; set; }
 
 
         private void MovieList_OnLoaded(object sender, RoutedEventArgs e)
@@ -66,54 +70,127 @@ namespace Kinect
             var db = new Database();
 
             //Popcorn has been selected
-            if (ComboBoxPopCornType.Text.Length != 0)
+            if (!string.IsNullOrEmpty(PopCornType))
             {
-                var quntity = int.Parse(ComboBoxPopCornQ.Text);
+                var quntity = ComboBoxPopCornQ.Value;
                 db.AddParameter("@ReservationId", this.ReservationId);
                 db.AddParameter("@SnakName", "Popcorn");
                 db.AddParameter("@Quntity", quntity);
-                db.AddParameter("@Type", ComboBoxPopCornType.Text);
+                db.AddParameter("@Type", PopCornType);
                 db.ExecuteNonQuery(
                     "insert into ReservationSnak(ReservationId,SnakName,Quntity,Type) values(@ReservationId,@SnakName,@Quntity,@Type)");
             }
 
-            if (ComboBoxPipsiType.Text.Length != 0)
+            if (!string.IsNullOrEmpty(PipiType))
             {
-                var quntity = int.Parse(ComboBoxPipsiQ.Text);
+                var quntity = ComboBoxPipsiQ.Value;
                 db.AddParameter("@ReservationId", this.ReservationId);
                 db.AddParameter("@SnakName", "Pepsi");
                 db.AddParameter("@Quntity", quntity);
-                db.AddParameter("@Type", ComboBoxPipsiType.Text);
+                db.AddParameter("@Type", PipiType);
                 db.ExecuteNonQuery(
                     "insert into ReservationSnak(ReservationId,SnakName,Quntity,Type) values(@ReservationId,@SnakName,@Quntity,@Type)");
             }
 
-            if (ComboBoxWaterType.Text.Length != 0)
+            if (!string.IsNullOrEmpty(WaterType))
             {
-                var quntity = int.Parse(ComboBoxWaterQ.Text);
+                var quntity = ComboBoxWaterQ.Value;
                 db.AddParameter("@ReservationId", this.ReservationId);
                 db.AddParameter("@SnakName", "Water");
                 db.AddParameter("@Quntity", quntity);
-                db.AddParameter("@Type", ComboBoxWaterType.Text);
+                db.AddParameter("@Type", WaterType);
                 db.ExecuteNonQuery(
                     "insert into ReservationSnak(ReservationId,SnakName,Quntity,Type) values(@ReservationId,@SnakName,@Quntity,@Type)");
             }
 
-            if (ComboBoxNashosType.Text.Length != 0)
+            if (!string.IsNullOrEmpty(NachosType))
             {
-                var quntity = int.Parse(ComboBoxNashosQ.Text);
+                var quntity = ComboBoxNachosQ.Value;
                 db.AddParameter("@ReservationId", this.ReservationId);
                 db.AddParameter("@SnakName", "Nashos");
                 db.AddParameter("@Quntity", quntity);
-                db.AddParameter("@Type", ComboBoxNashosType.Text);
+                db.AddParameter("@Type", NachosType);
                 db.ExecuteNonQuery(
                     "insert into ReservationSnak(ReservationId,SnakName,Quntity,Type) values(@ReservationId,@SnakName,@Quntity,@Type)");
             }
 
-            MessageBox.Show("Snak has been added to your order successfully. Click Ok to see your order summary page.");
             var form = new ReservationSummary(this.ReservationId);
             form.Show();
             this.Hide();
+        }
+
+        private void ComboBoxPopCornTypeL_OnClick(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            PopCornType = button.Content.ToString();
+            ComboBoxPopCornTypeL.Background = Brushes.LightGray;
+            ComboBoxPopCornTypeM.Background = Brushes.LightGray;
+            ComboBoxPopCornTypeS.Background = Brushes.LightGray;
+            button.Background = Brushes.Red;
+
+        }
+
+        private void ComboBoxPopCornQ_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (PopCornQ != null)
+            {
+                PopCornQ.Content = e.NewValue;
+            }
+
+        }
+
+        private void ComboBoxPipsiTypeL_OnClick(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            PipiType = button.Content.ToString();
+            ComboBoxPipsiTypeL.Background = Brushes.LightGray;
+            ComboBoxPipsiTypeM.Background = Brushes.LightGray;
+            ComboBoxPipsiTypeS.Background = Brushes.LightGray;
+            button.Background = Brushes.Red;
+        }
+
+        private void ComboBoxPipsiQ_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (PipsiQ != null)
+            {
+                PipsiQ.Content = e.NewValue;
+            }
+        }
+
+        private void ComboBoxWaterTypeL_OnClick(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            WaterType = button.Content.ToString();
+            ComboBoxWaterTypeL.Background = Brushes.LightGray;
+            ComboBoxWaterTypeM.Background = Brushes.LightGray;
+            ComboBoxWaterTypeS.Background = Brushes.LightGray;
+            button.Background = Brushes.Red;
+        }
+
+        private void ComboBoxWaterQ_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (WaterQ != null)
+            {
+                WaterQ.Content = e.NewValue;
+            }
+        }
+
+        private void ComboBoxNachosTypeL_OnClick(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            NachosType = button.Content.ToString();
+            ComboBoxNachosTypeL.Background = Brushes.LightGray;
+            ComboBoxNachosTypeM.Background = Brushes.LightGray;
+            ComboBoxNachosTypeS.Background = Brushes.LightGray;
+            button.Background = Brushes.Red;
+        }
+
+        private void ComboBoxNachosQ_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (NachosQ != null)
+            {
+                NachosQ.Content = e.NewValue;
+            }
         }
     }
 }
