@@ -23,7 +23,18 @@
                     <Image x:Name="imgBack" HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/back.png"/>
                 </StackPanel>
             </Button>
-            <WebBrowser Name="WebBrowser1" HorizontalAlignment="Left" Height="200" Margin="10,69,0,0" VerticalAlignment="Top" Width="224"/>
+            <Button Name="BtnCloseVideo" Visibility="Hidden" Click="ButtonCloseVideo_OnClick" HorizontalAlignment="Right" VerticalContentAlignment="Top" BorderThickness="0" Background="White"   Height="Auto" Width="Auto" Grid.Column="0" Margin="0,50,260,0">
+                <StackPanel>
+                    <Image  HorizontalAlignment="Left" Height="42"  Width="42" Source="Images/close.png" />
+                </StackPanel>
+            </Button>
+            <WebBrowser Visibility="Hidden" Name="WebBrowser1" HorizontalAlignment="Left" Height="500" Margin="10,69,0,0" VerticalAlignment="Top" Width="900" />
+            <Button Click="ButtonPlay_OnClick"  BorderThickness="0" Background="White"    Grid.Column="0" Margin="0,0,970,350" >
+                <StackPanel>
+                    <Image Name="MoveImg"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"  Width="200" Stretch="Fill" Source="Images/harray.jpg"/>
+                    <Image Margin="0,-150,0,0"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="100"  Width="100" Stretch="Fill" Source="Images/play.png"/>
+                </StackPanel>
+            </Button>
             <TextBlock x:Name="descriptionLbl" TextWrapping="WrapWithOverflow" Text="Description" HorizontalAlignment="Left" Margin="249,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.148,-0.033" Width="530" Height="169"/>
             <Label x:Name="durationLbl" Content="Label" HorizontalAlignment="Left" Margin="249,239,0,0" VerticalAlignment="Top" Width="530" FontSize="14"/>
             <Image x:Name="rateImg1" HorizontalAlignment="Left"  Height="23" Margin="254,298,0,0" VerticalAlignment="Top" Width="25" Source="Images/start_empty.png"/>

@@ -67,7 +67,12 @@ namespace Kinect
             };
 
             name.Content = Movie.Name;
-            WebBrowser1.Source = new Uri(Movie.VideoUrl);
+            BitmapImage logo = new BitmapImage();
+            logo.BeginInit();
+            logo.UriSource = new Uri(Movie.Img, UriKind.Relative);
+            logo.EndInit();
+            MoveImg.Source = logo;
+
             descriptionLbl.Text = $"Description:\n{Movie.Description}";
             durationLbl.Content = $"Duration: {Movie.Duration}";
             lblRate.Content = $"({Movie.Rate}/5)";
@@ -119,7 +124,7 @@ namespace Kinect
             var btn = sender as Button;
             var now = DateTime.Now;
             var houre = int.Parse(btn.CommandParameter.ToString());
-            var time = new DateTime(now.Year, now.Month, now.Day, houre+12, 0, 0);
+            var time = new DateTime(now.Year, now.Month, now.Day, houre + 12, 0, 0);
             var reservationData = new ReservationData
             {
                 MovieId = this.MovieId,
@@ -129,6 +134,21 @@ namespace Kinect
             reservation.Show();
             this.Hide();
 
+        }
+
+        private void ButtonPlay_OnClick(object sender, RoutedEventArgs e)
+        {
+            WebBrowser1.Visibility = Visibility.Visible;
+            WebBrowser1.Source = new Uri($"{Movie.VideoUrl}?autoplay=1");
+            BtnCloseVideo.Visibility = Visibility.Visible;
+        }
+
+
+        private void ButtonCloseVideo_OnClick(object sender, RoutedEventArgs e)
+        {
+            WebBrowser1.Visibility = Visibility.Hidden;
+            WebBrowser1.Source = null;
+            BtnCloseVideo.Visibility = Visibility.Hidden;
         }
     }
 }
